@@ -29,16 +29,17 @@ public class SecurityAdapter extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		System.out.println("configuere....");
-		http.authorizeRequests()
+		http
+			.csrf().disable()
+			.rememberMe().disable()
+			.authorizeRequests()
 			.antMatchers("/regist/**", "/assets/**").permitAll()
 			.antMatchers("/users/**").hasAuthority("admin")
 			.anyRequest().fullyAuthenticated()
 			.and()
-			.formLogin().loginPage("/login").failureUrl("/login?error").usernameParameter("username").defaultSuccessUrl("/").permitAll()
+			.formLogin().loginPage("/login").failureUrl("/login?error").usernameParameter("username").passwordParameter("password").defaultSuccessUrl("/").permitAll()
 			.and()
-			.logout().logoutUrl("/logout").deleteCookies("remember-me").logoutSuccessUrl("/login").permitAll()
-			.and()
-			.rememberMe();
+			.logout().logoutUrl("/logout").deleteCookies("JSESSIONID").logoutSuccessUrl("/login").permitAll();
 	}
 	
 //	private SecurityFilter securityFilter() {

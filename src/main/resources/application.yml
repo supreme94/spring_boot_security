@@ -6,13 +6,13 @@ spring:
       force: true
   data:
     mongodb:
-      uri: mongodb://10.10.1.106/security_demo
+      uri: mongodb://localhost/security_demo
   jackson:
     time-zone: Asia/Shanghai
     date-format: yyyy-MM-dd HH:mm:ss
     joda-date-time-format: yyyy-MM-dd HH:mm:ss
     serialization:
-      write_dates_as_timestamps: false
+      write-dates-as-timestamps: false
   freemarker: 
     enabled: true
     template-loader-path: classpath:/view/

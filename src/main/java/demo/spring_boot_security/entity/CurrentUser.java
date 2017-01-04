@@ -1,6 +1,8 @@
 package demo.spring_boot_security.entity;
 
-import org.springframework.security.core.authority.AuthorityUtils;
+import java.util.Arrays;
+
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 public class CurrentUser extends User {
@@ -10,7 +12,7 @@ public class CurrentUser extends User {
 	private Subscriber subscriber;
 	
 	public CurrentUser(Subscriber subscriber) {
-        super(subscriber.getUsername(), subscriber.getPasswordHash(), AuthorityUtils.createAuthorityList("admin"));
+        super(subscriber.getUsername(), subscriber.getPasswordHash(), Arrays.asList(new SimpleGrantedAuthority("ROLE_USER")));
         this.subscriber = subscriber;
     }
 

@@ -19,6 +19,10 @@ public class SubscriberService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Subscriber subscriber = subscriberRepository.findOneByUsername(username);
+//		List<SimpleGrantedAuthority> grantedAuthorities = new ArrayList<SimpleGrantedAuthority>(); 
+//		grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_USER"));  
+//		User user = new User(subscriber.getUsername(),subscriber.getPasswordHash(),true,true,true, true, grantedAuthorities);  
+//        return user; 
 		return new CurrentUser(subscriber);
 	}
 	
