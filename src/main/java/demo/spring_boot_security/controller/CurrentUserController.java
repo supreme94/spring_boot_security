@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import demo.spring_boot_security.entity.CurrentUser;
 
-@ControllerAdvice
-public class CurrentUserController {
-	
-	@ModelAttribute("currentUser")
-    public CurrentUser getCurrentUser(Authentication authentication) {
-		System.out.println("current user....");
-		System.out.println("authentication " + authentication);
-        return (authentication == null) ? null : (CurrentUser) authentication.getPrincipal();
-    }
-}
+//@ControllerAdvice
+//public class CurrentUserController {
+//	
+//	@ModelAttribute("currentUser")
+//    public CurrentUser getCurrentUser(Authentication authentication) {
+//		System.out.println("current user....");
+//		System.out.println("authentication " + authentication);
+//        return (authentication == null) ? null : (CurrentUser) authentication.getPrincipal();
+//    }
+//}

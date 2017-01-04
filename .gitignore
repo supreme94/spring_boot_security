@@ -24,3 +24,5 @@ hs_err_pid*
 /target/classes/META-INF/maven/demo/spring_boot_security/pom.xml
 /target/classes/META-INF/maven/demo/spring_boot_security/pom.properties
 /target/classes/view/login/index.html
+/target/classes/*
+target/classes/*

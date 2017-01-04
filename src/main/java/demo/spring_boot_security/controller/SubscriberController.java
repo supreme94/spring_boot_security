@@ -15,7 +15,7 @@ public class SubscriberController {
 	SubscriberRepository subscriberRepository;
 	
 	@GetMapping("/subscriber/{id}")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasRole('USER')")
 	public String index(@PathVariable("id") String id){
 		return "subscriber/index";
 	}

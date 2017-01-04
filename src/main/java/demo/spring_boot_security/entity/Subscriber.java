@@ -35,6 +35,15 @@ public class Subscriber implements Serializable {
 	@Field(value = "updated_at")
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
 	private DateTime updatedAt;
+	
+	public Subscriber() {
+		super();
+	}
+
+	public Subscriber(String username) {
+		super();
+		this.username = username;
+	}
 
 	public String getId() {
 		return id;

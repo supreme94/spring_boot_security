@@ -12,7 +12,7 @@ public class CurrentUser extends User {
 	private Subscriber subscriber;
 	
 	public CurrentUser(Subscriber subscriber) {
-        super(subscriber.getUsername(), subscriber.getPasswordHash(), Arrays.asList(new SimpleGrantedAuthority("ROLE_USER")));
+        super(subscriber.getUsername(), "aaa", Arrays.asList(new SimpleGrantedAuthority("ROLE_USER")));
         this.subscriber = subscriber;
     }
 
